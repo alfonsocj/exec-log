@@ -1,6 +1,6 @@
 import runCommand from 'log-command';
 
-const command = runCommand({ logPrefix: 'test', command: 'rm -i *.txt' });
+const command = runCommand('rm', ['-i', '*.txt'], { logPrefix: 'test' });
 
 command.on('exit', ({ code, logPath, removeLog }) => {
   if (code !== 0) {

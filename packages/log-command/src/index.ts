@@ -3,12 +3,6 @@ import { createWriteStream, rm } from 'fs'
 import { EventEmitter } from 'stream'
 import { promisify } from 'util'
 
-type InitParams = {
-    logPrefix?: string
-    command: string
-    args?: string[]
-}
-
 type ExitOptions = {
   code: number;
   logPath: string;
@@ -23,19 +17,23 @@ type Emitter = EventEmitter & {
     )
 }
 
-function runCommand({
+type CommandOptions = {
+    logPrefix?: string;
+    env?: Record<string, string>;
+  }
+
+function runCommand(command: string, args = [], {
     logPrefix = 'log',
-    command: rawCommand,
-    args: extraArgs = [],
-}: InitParams) {
+    env = {},
+}: CommandOptions) {
     const emitter: Emitter = new EventEmitter()
     const logPath = `/tmp/${logPrefix}-${Date.now()}`
     const logStream = createWriteStream(logPath)
 
-    const [command, ...args] = rawCommand.split(' ')
+    const [cmd, ...cmdArgs] = command.split(' ')
 
-    const child = spawn(command, [...args, ...extraArgs], {
-        env: { ...process.env, FORCE_COLOR: 'true' },
+    const child = spawn(cmd, [...cmdArgs, ...args], {
+        env: { ...process.env, ...env, FORCE_COLOR: 'true' },
         shell: '/bin/bash',
         stdio: ['inherit'],
     })
