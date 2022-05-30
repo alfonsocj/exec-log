@@ -35,10 +35,10 @@
   "main": "./cjs/index.cjs",
   "type": "commonjs",
   "files": [
+    "README.md",
     "cjs/**/*.{cjs,mjs,map}",
     "dts/**/*.d.ts",
-    "src/**/*.{ts,tsx,json}",
-    "README.md"
+    "src/**/*.{ts,tsx,json}"
   ],
   "types": "./dts/index.d.ts"
 }
