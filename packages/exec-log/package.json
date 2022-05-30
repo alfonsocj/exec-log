@@ -26,7 +26,6 @@
   "main": "./cjs/index.cjs",
   "type": "commonjs",
   "files": [
-    "cjs/**/*.{cjs,map}",
     "cjs/**/*.{cjs,mjs,map}",
     "dts/**/*.d.ts",
     "src/**/*.{ts,tsx,json}"
