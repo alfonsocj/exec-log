@@ -2722,24 +2722,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"log-command-root@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "log-command-root@workspace:."
-  dependencies:
-    "@types/node": ^17.0.36
-    typescript: ^4.7.2
-  languageName: unknown
-  linkType: soft
-
-"log-command@workspace:*, log-command@workspace:packages/log-command":
-  version: 0.0.0-use.local
-  resolution: "log-command@workspace:packages/log-command"
-  dependencies:
-    chokidar: ^3.5.3
-    packemon: ^2.2.2
-  languageName: unknown
-  linkType: soft
-
 "execa@npm:^4.0.0":
   version: 4.1.0
   resolution: "execa@npm:4.1.0"
@@ -3418,6 +3400,24 @@ fsevents@~2.3.2:
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
   languageName: node
   linkType: hard
+
+"log-command-root@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "log-command-root@workspace:."
+  dependencies:
+    "@types/node": ^17.0.36
+    typescript: ^4.7.2
+  languageName: unknown
+  linkType: soft
+
+"log-command@workspace:*, log-command@workspace:packages/log-command":
+  version: 0.0.0-use.local
+  resolution: "log-command@workspace:packages/log-command"
+  dependencies:
+    chokidar: ^3.5.3
+    packemon: ^2.2.2
+  languageName: unknown
+  linkType: soft
 
 "loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
