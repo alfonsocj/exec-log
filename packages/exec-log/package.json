@@ -1,5 +1,6 @@
 {
   "name": "exec-log",
+  "version": "0.1.3",
   "scripts": {
     "build": "packemon build --declaration",
     "check": "yarn run type && yarn run test && yarn run lint",
