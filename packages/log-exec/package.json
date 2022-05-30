@@ -1,11 +1,11 @@
 {
-  "name": "exec-log",
+  "name": "log-exec",
   "version": "0.1.5",
   "description": "This small script facilitates obtaining a log when running a command.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:alfonsocj/exec-log.git",
-    "directory": "packages/exec-log"
+    "url": "git@github.com:alfonsocj/log-exec.git",
+    "directory": "packages/log-exec"
   },
   "author": "Alfonso Curbelo",
   "license": "MIT",

@@ -5,7 +5,7 @@
     "start": "ts-node src/index.ts"
   },
   "dependencies": {
-    "exec-log": "workspace:*"
+    "log-exec": "workspace:*"
   },
   "devDependencies": {
     "ts-node": "^10.8.0"

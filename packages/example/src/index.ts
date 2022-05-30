@@ -1,4 +1,4 @@
-import runCommand from 'exec-log';
+import runCommand from 'log-exec';
 
 const command = runCommand({ logPrefix: 'test', command: 'rm -i *.txt' });
 
