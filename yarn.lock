@@ -2717,23 +2717,23 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "example@workspace:packages/example"
   dependencies:
-    log-exec: "workspace:*"
+    log-command: "workspace:*"
     ts-node: ^10.8.0
   languageName: unknown
   linkType: soft
 
-"log-exec-root@workspace:.":
+"log-command-root@workspace:.":
   version: 0.0.0-use.local
-  resolution: "log-exec-root@workspace:."
+  resolution: "log-command-root@workspace:."
   dependencies:
     "@types/node": ^17.0.36
     typescript: ^4.7.2
   languageName: unknown
   linkType: soft
 
-"log-exec@workspace:*, log-exec@workspace:packages/log-exec":
+"log-command@workspace:*, log-command@workspace:packages/log-command":
   version: 0.0.0-use.local
-  resolution: "log-exec@workspace:packages/log-exec"
+  resolution: "log-command@workspace:packages/log-command"
   dependencies:
     chokidar: ^3.5.3
     packemon: ^2.2.2

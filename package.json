@@ -1,8 +1,8 @@
 {
-  "name": "log-exec-root",
+  "name": "log-command-root",
   "version": "0.0.0",
   "scripts": {
-    "build": "yarn workspace log-exec build"
+    "build": "yarn workspace log-command build"
   },
   "workspaces": [
     "packages/*"

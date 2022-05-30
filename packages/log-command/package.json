@@ -1,11 +1,11 @@
 {
-  "name": "log-exec",
+  "name": "log-command",
   "version": "0.1.5",
   "description": "This small script facilitates obtaining a log when running a command.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:alfonsocj/log-exec.git",
-    "directory": "packages/log-exec"
+    "url": "git@github.com:alfonsocj/log-command.git",
+    "directory": "packages/log-command"
   },
   "author": "Alfonso Curbelo",
   "license": "MIT",
@@ -37,7 +37,8 @@
   "files": [
     "cjs/**/*.{cjs,mjs,map}",
     "dts/**/*.d.ts",
-    "src/**/*.{ts,tsx,json}"
+    "src/**/*.{ts,tsx,json}",
+    "README.md"
   ],
   "types": "./dts/index.d.ts"
 }

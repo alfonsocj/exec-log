@@ -1,4 +1,4 @@
-# log-exec
+# log-command
 
 This small script facilitates obtaining a log when running a command.
 
@@ -7,7 +7,7 @@ It's a wrapper around `child_process.spawn` that pipes the commands `stdout` and
 ## How to use it
 
 ```javascript
-import runCommand from 'log-exec';
+import runCommand from 'log-command';
 
 const child = runCommand({ logPrefix: 'test', command: 'rm -i *.txt' });
 
