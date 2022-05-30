@@ -1,0 +1,45 @@
+# Logs
+logs/
+*.log
+
+# Cache
+.eslintcache
+.npm
+.vscode
+
+# Directories
+assets/
+build/
+coverage/
+cjs/
+dist/
+dts/
+esm/
+lib/
+mjs/
+tmp/
+umd/
+node_modules/
+test/
+scenarios/*/build.js
+
+# Configs
+.babelrc
+.eslintignore
+/.eslintrc.js
+.flowconfig
+/.prettierignore
+/babel.config.js
+/jest.config.js
+/prettier.config.js
+/webpack.config.js
+*.tsbuildinfo
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

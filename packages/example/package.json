@@ -1,0 +1,13 @@
+{
+  "name": "example",
+  "packageManager": "yarn@3.2.1",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "exec-log": "workspace:*"
+  },
+  "devDependencies": {
+    "ts-node": "^10.8.0"
+  }
+}

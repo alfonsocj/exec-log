@@ -1,0 +1,35 @@
+{
+  "name": "exec-log",
+  "scripts": {
+    "build": "packemon build --declaration",
+    "check": "yarn run type && yarn run test && yarn run lint",
+    "clean": "packemon clean",
+    "coverage": "yarn run test --coverage",
+    "format": "prettier --write ./src ./tests",
+    "lint": "eslint --cache --fix ./src ./tests",
+    "pack": "NODE_ENV=production packemon pack --addEngines --declaration",
+    "prelease": "yarn run pack && yarn run check",
+    "release": "echo 'Customize your own release script!'",
+    "test": "jest",
+    "type": "tsc && tsc -p ./tests",
+    "validate": "packemon validate",
+    "watch": "packemon watch"
+  },
+  "devDependencies": {
+    "chokidar": "^3.5.3",
+    "packemon": "^2.2.2"
+  },
+  "packemon": {
+    "format": "cjs",
+    "platform": "node"
+  },
+  "main": "./cjs/index.cjs",
+  "type": "commonjs",
+  "files": [
+    "cjs/**/*.{cjs,map}",
+    "cjs/**/*.{cjs,mjs,map}",
+    "dts/**/*.d.ts",
+    "src/**/*.{ts,tsx,json}"
+  ],
+  "types": "./dts/index.d.ts"
+}

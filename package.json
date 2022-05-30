@@ -1,0 +1,14 @@
+{
+  "name": "exec-log-root",
+  "scripts": {
+    "prerelease": "yarn workspace exec-log build",
+    "release": "yarn prerelease && yarn workspace exec-log pack"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^17.0.36",
+    "typescript": "^4.7.2"
+  }
+}
