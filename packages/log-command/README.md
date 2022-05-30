@@ -9,14 +9,12 @@ It's a wrapper around `child_process.spawn` that pipes the commands `stdout` and
 ```javascript
 import runCommand from 'log-command';
 
-const child = runCommand({ logPrefix: 'test', command: 'rm -i *.txt' });
+const child = runCommand('rm', ['-i', '*.txt'], { logPrefix: 'test' });
 
 child.on('exit', ({ code, logPath, removeLog }) => {
   if (code !== 0) {
-    // log path is /tmp/{logPrefix}-{unixTime}
-    console.log(`Log saved in ${logPath}`);
+    console.error(`Log saved in ${logPath}`);
   } else {
-    // removing log since the command exited without errors
     void removeLog();
   }
 });
