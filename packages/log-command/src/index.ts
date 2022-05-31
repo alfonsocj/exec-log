@@ -4,10 +4,11 @@ import { EventEmitter } from 'stream';
 import { promisify } from 'util';
 
 type ExitOptions = {
-  code: number
-  logPath: string
-  removeLog: () => Promise<void>
-}
+  code: number | null;
+  logPath: string;
+  removeLog: () => Promise<void>;
+};
+
 interface Emitter extends EventEmitter {
   // eslint-disable-next-line no-unused-vars
   emit(eventName: 'exit', options: ExitOptions): boolean;
@@ -37,7 +38,7 @@ function runCommand(
   const child = spawn(cmd, [...cmdArgs, ...args], {
     env: { ...process.env, ...env, FORCE_COLOR: 'true' },
     shell: '/bin/bash',
-    stdio: ['inherit'],
+    stdio: ['inherit', 'pipe', 'pipe'],
   });
 
   child.stdout.pipe(process.stdout, { end: false });

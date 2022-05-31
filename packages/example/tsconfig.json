@@ -1,10 +1,8 @@
 {
   "extends": "../../tsconfig.projectOptions.json",
   "compilerOptions": {
-    "declarationDir": "dts",
-    "outDir": "dts",
     "rootDir": ".",
-    "emitDeclarationOnly": true
+    "outDir": "dist"
   },
   "include": [
     "**/*"

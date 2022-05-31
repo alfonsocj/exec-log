@@ -1,25 +1,29 @@
 {
   "name": "log-command",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "This small script facilitates obtaining a log when running a command.",
   "repository": {
     "type": "git",
     "url": "github:alfonsocj/log-command"
   },
+  "keywords": [
+    "log",
+    "exec",
+    "spawn"
+  ],
   "author": "Alfonso Curbelo",
   "license": "MIT",
   "scripts": {
-    "build": "packemon build --declaration",
+    "build": "packemon build --declaration --declarationConfig tsconfig.build.json",
     "check": "yarn run type && yarn run test && yarn run lint",
     "clean": "packemon clean",
     "coverage": "yarn run test --coverage",
     "format": "prettier --write ./src ./tests",
     "lint": "eslint --cache --fix ./src/* ./tests/*",
-    "pack": "NODE_ENV=production packemon pack --addEngines --declaration",
-    "prelease": "yarn run pack && yarn run check",
-    "release": "echo 'Customize your own release script!'",
+    "pack": "NODE_ENV=production packemon pack --addEngines --declaration --declarationConfig tsconfig.build.json",
+    "release": "yarn run pack && yarn npm publish",
     "test": "jest",
-    "type": "tsc && tsc -p ./tests",
+    "type": "tsc",
     "validate": "packemon validate",
     "watch": "packemon watch"
   },
@@ -27,12 +31,10 @@
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "chokidar": "^3.5.3",
-    "eslint": "^7.32.0 || ^8.2.0",
-    "eslint-config-airbnb-base": "latest",
-    "eslint-plugin-import": "^2.25.2",
+    "eslint": "^7.32.0",
+    "jest": "^28.1.0",
     "packemon": "^2.2.2",
     "prettier": "^2.6.2",
-    "tsc": "^2.0.4",
     "typescript": "^4.7.2"
   },
   "packemon": {
@@ -47,5 +49,9 @@
     "dts/**/*.d.ts",
     "src/**/*.{ts,tsx,json}"
   ],
-  "types": "./dts/index.d.ts"
+  "types": "./dts/index.d.ts",
+  "engines": {
+    "node": ">=14.15.0",
+    "npm": ">=6.14.0"
+  }
 }
