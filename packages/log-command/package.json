@@ -24,6 +24,7 @@
     "release": "yarn run pack && yarn npm publish",
     "test": "jest",
     "type": "tsc",
+    "setup": "yarn run clean && yarn run build",
     "validate": "packemon validate",
     "watch": "packemon watch"
   },

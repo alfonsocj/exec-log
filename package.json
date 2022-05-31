@@ -4,6 +4,7 @@
   "scripts": {
     "check": "yarn log-command check",
     "log-command": "yarn workspace log-command",
+    "setup": "yarn log-command setup",
     "release": "yarn log-command release"
   },
   "workspaces": [
