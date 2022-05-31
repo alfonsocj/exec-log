@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.buildOptions.json",
+  "compilerOptions": {
+    "outDir": "dts"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "cjs",
+    "dts"
+  ]
+}
