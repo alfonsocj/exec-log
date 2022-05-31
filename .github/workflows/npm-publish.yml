@@ -11,7 +11,7 @@ env:
   NPM_TOKEN: ${{secrets.npm_token}}
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,14 +19,4 @@ jobs:
         with:
           node-version: 16
       - run: yarn install
-      - run: yarn build
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: cd packages/log-command && yarn npm publish
+      - run: yarn release
