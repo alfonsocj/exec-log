@@ -3,7 +3,7 @@
   "compilerOptions": {
     "declarationDir": "dts",
     "outDir": "dts",
-    "rootDir": "src",
+    "rootDir": ".",
     "emitDeclarationOnly": true
   },
   "include": [
