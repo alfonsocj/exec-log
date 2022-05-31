@@ -4,8 +4,7 @@
   "description": "This small script facilitates obtaining a log when running a command.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:alfonsocj/log-command.git",
-    "directory": "packages/log-command"
+    "url": "github:alfonsocj/log-command"
   },
   "author": "Alfonso Curbelo",
   "license": "MIT",

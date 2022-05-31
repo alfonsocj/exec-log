@@ -18,17 +18,18 @@ interface Emitter extends EventEmitter {
 }
 
 type CommandOptions = {
-  logPrefix?: string
-  env?: Record<string, string>
-}
+  logPath?: string;
+  logPrefix?: string;
+  env?: Record<string, string>;
+};
 
 function runCommand(
   command: string,
-  args = [],
-  { logPrefix = 'log', env = {} }: CommandOptions = {},
+  args: string[] = [],
+  { logPath: userLogPath, logPrefix = 'log', env = {} }: CommandOptions = {},
 ) {
   const emitter: Emitter = new EventEmitter();
-  const logPath = `/tmp/${logPrefix}-${Date.now()}`;
+  const logPath = userLogPath ?? `/tmp/${logPrefix}-${Date.now()}`;
   const logStream = createWriteStream(logPath);
 
   const [cmd, ...cmdArgs] = command.split(' ');

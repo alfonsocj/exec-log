@@ -19,11 +19,10 @@ child.on('exit', ({ code, logPath, removeLog }) => {
   }
 });
 ```
-
 ## Options
 
-| Option      | Description                 |
-| ----------- | --------------------------- |
-| `logPrefix` | Prefix for the log filename |
-| `command`   | Command to execute          |
-| `args`      | Command arguments           |
+| Option | type | Description |
+|---|---|---|
+| `logPath` | string | Path to the generated log file. |
+| `logPrefix` | string | Convenience option to `logPath` (ignored if `logPath` exists). The path to the log will be `/tmp/${logPath}/${Date.now}. defaults to `log`. |
+| `env` | object | Environment variables for the process (it already includes process.env). |
