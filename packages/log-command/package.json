@@ -1,6 +1,6 @@
 {
   "name": "log-command",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "This small script facilitates obtaining a log when running a command.",
   "repository": {
     "type": "git",
