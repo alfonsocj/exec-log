@@ -25,8 +25,6 @@ scenarios/*/build.js
 
 # Configs
 .babelrc
-.eslintignore
-/.eslintrc.js
 .flowconfig
 /.prettierignore
 /babel.config.js
