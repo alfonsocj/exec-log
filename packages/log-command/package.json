@@ -1,10 +1,10 @@
 {
   "name": "log-command",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "This small script facilitates obtaining a log when running a command.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:alfonsocj/log-command.git"
+    "url": "github:alfonsocj/log-command"
   },
   "keywords": [
     "log",
