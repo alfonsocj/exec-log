@@ -2,7 +2,9 @@
   "name": "log-command-root",
   "version": "0.0.0",
   "scripts": {
-    "build": "yarn workspace log-command build"
+    "check": "yarn log-command check",
+    "log-command": "yarn workspace log-command",
+    "release": "yarn log-command release"
   },
   "workspaces": [
     "packages/*"

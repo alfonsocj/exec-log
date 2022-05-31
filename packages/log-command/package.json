@@ -4,9 +4,13 @@
   "description": "This small script facilitates obtaining a log when running a command.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:alfonsocj/log-command.git",
-    "directory": "packages/log-command"
+    "url": "git@github.com:alfonsocj/log-command.git"
   },
+  "keywords": [
+    "log",
+    "exec",
+    "spawn"
+  ],
   "author": "Alfonso Curbelo",
   "license": "MIT",
   "scripts": {
@@ -16,11 +20,10 @@
     "coverage": "yarn run test --coverage",
     "format": "prettier --write ./src ./tests",
     "lint": "eslint --cache --fix ./src/* ./tests/*",
-    "pack": "NODE_ENV=production packemon pack --addEngines --declaration",
-    "prelease": "yarn run pack && yarn run check",
-    "release": "echo 'Customize your own release script!'",
+    "pack": "NODE_ENV=production packemon pack --addEngines --declaration --declarationConfig tsconfig.build.json",
+    "release": "yarn run pack && yarn npm publish",
     "test": "jest",
-    "type": "tsc && tsc -p ./tests",
+    "type": "tsc",
     "validate": "packemon validate",
     "watch": "packemon watch"
   },
@@ -46,5 +49,9 @@
     "dts/**/*.d.ts",
     "src/**/*.{ts,tsx,json}"
   ],
-  "types": "./dts/index.d.ts"
+  "types": "./dts/index.d.ts",
+  "engines": {
+    "node": ">=14.15.0",
+    "npm": ">=6.14.0"
+  }
 }
