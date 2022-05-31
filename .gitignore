@@ -41,3 +41,5 @@ scenarios/*/build.js
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+.DS_Store
