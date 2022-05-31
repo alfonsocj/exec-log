@@ -1,10 +1,11 @@
-import { exit } from "process";
+import chalk from 'chalk';
+import { exit } from 'process';
 
 export function main() {
   console.log('Hello');
-  console.log('[debug] here is some debug message');
+  console.log(chalk.dim('[debug] here is some debug message [/debug]'));
   console.log('World');
-  exit(0);
+  exit(1);
 }
 
 main();

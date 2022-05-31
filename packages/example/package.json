@@ -5,6 +5,7 @@
     "start": "ts-node src/index.ts"
   },
   "dependencies": {
+    "chalk": "^4.1.0",
     "log-command": "workspace:*"
   },
   "devDependencies": {

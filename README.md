@@ -26,3 +26,5 @@ child.on('exit', ({ code, logPath, removeLog }) => {
 | `logPath` | string | Path to the generated log file. |
 | `logPrefix` | string | Convenience option to `logPath` (ignored if `logPath` exists). The path to the log will be `/tmp/${logPath}/${Date.now}. defaults to `log`. |
 | `env` | object | Environment variables for the process (it already includes process.env). |
+| `filterStdOut` | `(chunk: string) => string` | Function to filter out parts of the output that's sent to stdout |
+| `filterStdErr` | `(chunk: string) => string` | Function to filter out parts of the output that's sent to stderr |

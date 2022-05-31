@@ -3968,6 +3968,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "example@workspace:packages/example"
   dependencies:
+    chalk: ^4.1.0
     log-command: "workspace:*"
     ts-node: ^10.8.0
   languageName: unknown

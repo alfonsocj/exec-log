@@ -1,7 +1,8 @@
 import { spawn } from 'child_process';
 import { createWriteStream, rm } from 'fs';
-import { EventEmitter, Transform } from 'stream';
+import { EventEmitter } from 'stream';
 import { promisify } from 'util';
+import { createFilterStream } from './filterStream';
 
 type ExitOptions = {
   code: number | null;
@@ -19,7 +20,8 @@ type CommandOptions = {
   logPath?: string;
   logPrefix?: string;
   env?: Record<string, string>;
-  filter?: (chunk: string) => boolean;
+  filterStdOut?: (chunk: string) => string;
+  filterStdErr?: (chunk: string) => string;
 };
 
 function runCommand(
@@ -29,7 +31,8 @@ function runCommand(
     logPath: userLogPath,
     logPrefix = 'log',
     env = {},
-    filter = () => true,
+    filterStdOut,
+    filterStdErr,
   }: CommandOptions = {},
 ) {
   const emitter: Emitter = new EventEmitter();
@@ -43,23 +46,24 @@ function runCommand(
     shell: '/bin/bash',
     stdio: ['inherit', 'pipe', 'pipe'],
   });
-  
-  const filterStream = new Transform({
-    transform: (chunk, _encoding, next) => {
-      console.log(chunk);
-      // console.error(`** chunk ${chunk.toString()} filter ${filter(chunk.toString())}**`);
-      if (filter(chunk.toString())) {
-        return next(null, chunk);
-      }
-      next();
-    },
-  });
 
+  // StdOut
   child.stdout.pipe(logStream, { end: false });
-  child.stdout.pipe(filterStream, { end: false }).pipe(process.stdout, { end: false });
-  
+  if (filterStdOut) {
+    const filterStdOutStream = createFilterStream(filterStdOut);
+    child.stdout.pipe(filterStdOutStream, { end: false }).pipe(process.stdout, { end: false });
+  } else {
+    child.stdout.pipe(process.stdout, { end: false });
+  }
+
+  // StdErr
   child.stderr.pipe(logStream, { end: false });
-  child.stderr.pipe(filterStream, { end: false }).pipe(process.stderr, { end: false });
+  if (filterStdErr) {
+    const filterStdErrStream = createFilterStream(filterStdErr);
+    child.stderr.pipe(filterStdErrStream, { end: false }).pipe(process.stderr, { end: false });
+  } else {
+    child.stderr.pipe(process.stderr, { end: false });
+  }
 
   const removeLog = () => promisify(rm)(logPath);
 
